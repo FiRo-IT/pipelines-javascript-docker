@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: firoitpipelinesjavascriptdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: firoitpipelinesjavascriptdocker
+  template:
+    metadata:
+      labels:
+        app: firoitpipelinesjavascriptdocker 
+    spec:
+      containers:
+        - name: firoitpipelinesjavascriptdocker 
+          image: myconntainerregistry.azurecr.io/firoitpipelinesjavascriptdocker
+          ports:
+          - containerPort: 8080
